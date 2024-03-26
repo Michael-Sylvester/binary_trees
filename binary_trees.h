@@ -49,6 +49,8 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 void binary_tree_print(const binary_tree_t *tree);
 
 /*--------------------My functions-----------------------------------*/
-
+void print_tree(binary_tree_t *root);
+void print_tree_recur(binary_tree_t *root , int level);
+void spaces(int times);
 
 #endif

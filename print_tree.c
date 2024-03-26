@@ -29,17 +29,17 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 	for (i = 0; i < width; i++)
 		s[depth][offset + left + i] = b[i];
 	if (depth && is_left)
-		{
-			for (i = 0; i < width + right; i++)
-				s[depth - 1][offset + left + width / 2 + i] = '-';
-			s[depth - 1][offset + left + width / 2] = '.';
-		}
+	{
+		for (i = 0; i < width + right; i++)
+			s[depth - 1][offset + left + width / 2 + i] = '-';
+		s[depth - 1][offset + left + width / 2] = '.';
+	}
 	else if (depth && !is_left)
-		{
-			for (i = 0; i < left + width; i++)
-				s[depth - 1][offset - width / 2 + i] = '-';
-			s[depth - 1][offset + left + width / 2] = '.';
-		}
+	{
+		for (i = 0; i < left + width; i++)
+			s[depth - 1][offset - width / 2 + i] = '-';
+		s[depth - 1][offset + left + width / 2] = '.';
+	}
 	return (left + width + right);
 }
 
@@ -77,23 +77,23 @@ void binary_tree_print(const binary_tree_t *tree)
 	if (!s)
 		return;
 	for (i = 0; i < height + 1; i++)
-		{
-			s[i] = malloc(sizeof(**s) * 255);
-			if (!s[i])
-				return;
-			memset(s[i], 32, 255);
-		}
+	{
+		s[i] = malloc(sizeof(**s) * 255);
+		if (!s[i])
+			return;
+		memset(s[i], 32, 255);
+	}
 	print_t(tree, 0, 0, s);
 	for (i = 0; i < height + 1; i++)
+	{
+		for (j = 254; j > 1; --j)
 		{
-			for (j = 254; j > 1; --j)
-				{
-					if (s[i][j] != ' ')
-						break;
-					s[i][j] = '\0';
-				}
-			printf("%s\n", s[i]);
-			free(s[i]);
+			if (s[i][j] != ' ')
+				break;
+			s[i][j] = '\0';
 		}
+		printf("%s\n", s[i]);
+		free(s[i]);
+	}
 	free(s);
 }
