@@ -27,7 +27,7 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree)
 
 		oldleft->parent = granny;
 	}
-	else if (granny == NULL)
+	else if (granny == NULL && oldleft != NULL)
 		oldleft->parent = NULL;
 	else
 		return (tree);
@@ -39,7 +39,7 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree)
 	oldtop->left = temp;
 
 	if (temp != NULL)
-		temp->parent = oldleft;
+		temp->parent = oldtop;
 	oldtop->parent = oldleft;
 	return (oldleft);
 }
