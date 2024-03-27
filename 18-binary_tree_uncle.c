@@ -17,11 +17,11 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	mom = node->parent;
 	if (mom->parent == NULL)
 		return (NULL);
-	else
+
 		granny = mom->parent;
-	
+
 	if (granny->right == mom)
 		return (granny->left);
 	return (granny->right);
-	
+
 }

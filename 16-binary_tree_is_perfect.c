@@ -2,7 +2,8 @@
 
 /**
  *binary_tree_is_perfect - Check if tree is perfect
- *@tree: binary tree root *Return: int
+ *@tree: binary tree root
+ *Return: int
  */
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
@@ -18,13 +19,14 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (l_level == r_level && l_level != -1)
 		return (1);
-	return(0);
+	return (0);
 }
 
 /**
- *get_level - Calculate height of the tree
+ *get_level - Calculate level\height of the node
  *@tree: binary tree node
- *Return: int
+ *@level: the level/depth of the node
+ *Return: the level of the node or -1 if not full
  */
 int get_level(const binary_tree_t *tree, int level)
 {
