@@ -40,7 +40,7 @@ int get_level(const binary_tree_t *tree, int level)
 		return (level);
 
 	if (tree->left == NULL || tree->right == NULL)
-		return(-1);
+		return (-1);
 
 
 	left = get_level(tree->left, level + 1);
