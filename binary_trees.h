@@ -56,5 +56,6 @@ void spaces(int times);
 void preorder(binary_tree_t *node, void (*func)(int));
 void inorder(binary_tree_t *node, void (*func)(int));
 void postorder(binary_tree_t *node, void (*func)(int));
+int get_height(const binary_tree_t *tree);
 
 #endif
