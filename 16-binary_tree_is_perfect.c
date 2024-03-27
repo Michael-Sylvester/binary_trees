@@ -33,6 +33,9 @@ int get_level(const binary_tree_t *tree, int level)
 	int left = 0;
 	int right = 0;
 
+	if (tree == NULL)
+		return (-1);
+
 	if (tree->left == NULL && tree->right == NULL)
 		return (level);
 	else if (tree->left != NULL && tree->right != NULL)

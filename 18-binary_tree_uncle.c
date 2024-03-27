@@ -18,10 +18,9 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	if (mom->parent == NULL)
 		return (NULL);
 
-		granny = mom->parent;
+	granny = mom->parent;
 
 	if (granny->right == mom)
 		return (granny->left);
 	return (granny->right);
-
 }
