@@ -34,20 +34,18 @@ int get_level(const binary_tree_t *tree, int level)
 	int right = 0;
 
 	if (tree == NULL)
-		return (-1);
+		return (0);
 
 	if (tree->left == NULL && tree->right == NULL)
 		return (level);
-	else if (tree->left != NULL && tree->right != NULL)
-	{
-		left = get_level(tree->left, level + 1);
-		right = get_level(tree->right, level + 1);
-		if (left == right && left != -1)
-		{
-			level = left;
-			return (level);
-		}
-	}
 
-	return (-1);
+	if (tree->left == NULL || tree->right == NULL)
+		return(-1);
+
+
+	left = get_level(tree->left, level + 1);
+	right = get_level(tree->right, level + 1);
+	if (left == right && left != -1)
+		level = left;
+	return (level);
 }
