@@ -11,7 +11,7 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (NULL);
-	
+
 	granny = tree->parent;
 	oldtop = tree;
 	oldright = tree->right;
@@ -24,14 +24,14 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 			granny->left = oldright;
 		else if (granny->right == oldtop)
 			granny->right = oldright;
-		
+
 		oldright->parent = granny;
 	}
 	else if (granny == NULL)
 		oldright->parent = NULL;
 	else
 		return (tree);
-	
+
 	/*The left child on oldright should be moved to the left of oldtop*/
 	if (oldright->left != NULL)
 		temp = oldright->left;
