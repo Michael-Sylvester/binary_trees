@@ -69,9 +69,9 @@ int checkright(int target, binary_tree_t *node)
 
 	if (node->n > target)
 	{
-		check = checkleft(target, node->left);
+		check = checkright(target, node->left);
 		if (check == 1)
-			check = checkleft(target, node->right);
+			check = checkright(target, node->right);
 		return (check);
 	}
 	else
