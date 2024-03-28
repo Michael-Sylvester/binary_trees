@@ -34,7 +34,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 *checkleft - check if every node is smaller than the target
 *@target: the target value
 *@node: the node to compare
-*Return:
+*Return: 1 if all are smaller or 0
 */
 int checkleft(int target, binary_tree_t *node)
 {
@@ -58,7 +58,7 @@ int checkleft(int target, binary_tree_t *node)
  *checkright - check if every node is larger than the target
  *@target: the target value
  *@node: the node to compare
- *Return:
+ *Return: 1 if all are smaller or 0
  */
 int checkright(int target, binary_tree_t *node)
 {
@@ -68,12 +68,12 @@ int checkright(int target, binary_tree_t *node)
 		return (1);
 
 	if (node->n > target)
-		{
-			check = checkleft(target, node->left);
-			if (check == 1)
-				check = checkleft(target, node->right);
-			return (check);
-		}
+	{
+		check = checkleft(target, node->left);
+		if (check == 1)
+			check = checkleft(target, node->right);
+		return (check);
+	}
 	else
 		return (0);
 }
