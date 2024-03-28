@@ -71,4 +71,7 @@ int get_level(const binary_tree_t *tree, int level);
 int get_level2(const binary_tree_t *tree, int level);
 binary_tree_t *find_sibling(binary_tree_t *child);
 int check_decendants(const binary_tree_t *node, const binary_tree_t *target);
+int checkright(int target, binary_tree_t *node);
+int checkleft(int target, binary_tree_t *node);
+
 #endif
